@@ -1,0 +1,10 @@
+az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
+kubectl get nodes
+wget https://raw.githubusercontent.com/NubeEra-Samples/AKS-VotingApp/main/azure-vote.yaml
+kubectl apply -f azure-vote.yaml
+
+kubectl get service azure-vote-front --watch
+
+
+#Delete Cluster
+az group delete --name myResourceGroup --yes --no-wait
